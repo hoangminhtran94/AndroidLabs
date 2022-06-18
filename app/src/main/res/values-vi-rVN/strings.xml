@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lab01</string>
-    <string name="hello_message">Xin Chao!</string>
-    <string name="ButtonText">Cai nut day</string>
+    <string name="app_name">Lab02</string>
+    <string name="hello_message">Lab02 GUI</string>
+    <string name="ButtonText">Nhan vao day</string>
+    <string name="toast_message">Nhan vao day de biet them chi tiet</string>
+    <string name="checkthisout">Xem ne</string>
+    <string name="default_switch_message">Cong tac bat/tat</string>
+    <string name="undo">Dieu chinh thay doi</string>
+    <string name="snackbar_message">Cong tac hien tai dang </string>
+    <string name="hint">Nhap ten cua ban</string>
+    <string name="checked">Danh dau</string>
+    <string name="unchecked">Khong danh dau</string>
 </resources>
