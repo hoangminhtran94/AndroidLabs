@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Lab02</string>
-    <string name="hello_message">Lab02 GUI</string>
+    <string name="app_name">lab03</string>
+    <string name="hello_message">lab03</string>
     <string name="ButtonText">Nhan vao day</string>
-    <string name="toast_message">Nhan vao day de biet them chi tiet</string>
-    <string name="checkthisout">Xem ne</string>
-    <string name="default_switch_message">Cong tac bat/tat</string>
-    <string name="undo">Dieu chinh thay doi</string>
-    <string name="snackbar_message">Cong tac hien tai dang </string>
-    <string name="hint">Nhap ten cua ban</string>
-    <string name="checked">Danh dau</string>
-    <string name="unchecked">Khong danh dau</string>
+    <string name="email">Nhap email:</string>
+    <string name="emailHint">Nhap email vao day</string>
+    <string name="password">Nhap mat ma:</string>
+    <string name="loginButton">Dang nhap</string>
+    <string name="profileMessage">Profile cua ban</string>
+    <string name="name">Ten cua ban</string>
+    <string name="nameHint">Nhap ten cua ban</string>
+    <string name="profileEmail">Email cua ban:</string>
+    <string name="profileEmailHint">Nhap email cua ban</string>
+    <string name="image">Hinh cua ban:</string>
+    <string name="imageHint">Nhap vao hinh tren de chup hinh</string>
 </resources>

@@ -2,57 +2,71 @@ package com.cst2335.tran0450;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.Switch;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.EditText;
 
-import com.google.android.material.snackbar.Snackbar;
+import java.util.concurrent.Executor;
 
 public class MainActivity extends AppCompatActivity {
+    private EditText emailView;
+    private Button loginButton;
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_constraint);
-         Switch onOffSwitch = (Switch) findViewById(R.id.on_off_switch);
-          onOffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-              @Override
-              public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                  String message = getString(R.string.snackbar_message);
-                  String checked = getString(R.string.checked);
-                  String notChecked = getString(R.string.unchecked);
-                  Snackbar snackbar;
-                if(buttonView.isChecked()){
-                    snackbar = Snackbar.make(
-                            findViewById(R.id.on_off_switch),
-                            message+" "+checked,
-                            Snackbar.LENGTH_LONG);
-                    onOffSwitch.setText(R.string.checked);
+        setContentView(R.layout.activity_main);
+        emailView = (EditText) findViewById(R.id.email);
 
+        loginButton = (Button) findViewById(R.id.loginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                preferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                String savedEmail = preferences.getString("email","");
+                SharedPreferences.Editor ed = preferences.edit();
+                String inputEmail = emailView.getText().toString().trim();
+                ed.putString("email",inputEmail).apply();
+  ;
+                if(inputEmail.isEmpty()) {
+                    emailView.setText(savedEmail);
                 }
                 else {
-                    snackbar = Snackbar.make(
-                            findViewById(R.id.on_off_switch),
-                            message+" "+notChecked,
-                            Snackbar.LENGTH_LONG);
-                    onOffSwitch.setText(R.string.unchecked);
+                    Intent goToProfile = new Intent(MainActivity.this, ProfileActivity.class);
+                    goToProfile.putExtra("Email", inputEmail);
+                    startActivity(goToProfile);
                 }
-                  snackbar.setAction(R.string.undo, click ->
-                          buttonView.setChecked(!isChecked)).show();
-              }
-          });
-    }
-    public void showToast(View view) {
-        Toast.makeText(
-                this,
-                this.getResources().getString(R.string.toast_message),
-                Toast.LENGTH_LONG).show();
+            }
+        });
+
+
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        emailView = (EditText) findViewById(R.id.email);
+        String inputEmail = emailView.getText().toString();
+
+        preferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+        String savedEmail = preferences.getString("email","");
+
+        SharedPreferences.Editor ed = preferences.edit();
+        ed.putString("email",inputEmail).apply();
+
+        if(inputEmail.isEmpty()) {
+            emailView.setText(savedEmail);
+        }
+        else {
+            emailView.setText(inputEmail);
+        }
 
 
-
-
+    }
 }
