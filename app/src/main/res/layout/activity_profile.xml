@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="lab03"
+        android:text="Your profile"
         android:textAlignment="center"
         android:textSize="34sp"
         />
@@ -23,13 +23,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Enter your email address" />
+            android:text="Your name" />
         <EditText
-            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Type email here"
-            android:inputType="textEmailAddress"/>
+            android:hint="Enter your name"/>
     </LinearLayout>
 
     <LinearLayout
@@ -40,12 +38,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Type your password:"
-            android:inputType="textPassword"/>
+            android:text="Your email:" />
         <EditText
+            android:id="@+id/profileEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint=""/>
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress"/>
 
     </LinearLayout>
     <LinearLayout
@@ -53,11 +52,25 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-    <Button
-        android:id="@+id/loginButton"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Your picture:" />
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Login"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:text="Click the button above to take a picture"/>
 
     </LinearLayout>
 </LinearLayout >
