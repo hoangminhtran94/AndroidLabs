@@ -14,11 +14,14 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+
 public class ProfileActivity extends AppCompatActivity {
     private ImageButton imgView;
+    private Button toChat;
     private EditText profileEmail;
     public static final String TAG = "PROFILE_ACTIVITY";
 
@@ -28,6 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         profileEmail = (EditText) findViewById(R.id.profileEmail);
+        toChat = (Button) findViewById(R.id.toChatButton);
         Intent fromMain = getIntent();
         String emailFromMain = fromMain.getStringExtra("Email");
 
@@ -60,5 +64,13 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        toChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToChat = new Intent(ProfileActivity.this, ChatRoomActivity.class);
+//                goToProfile.putExtra("Email", inputEmail);
+                startActivity(goToChat);
+            }
+        });
     }
 }

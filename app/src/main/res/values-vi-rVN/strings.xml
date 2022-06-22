@@ -14,4 +14,5 @@
     <string name="profileEmailHint">Nhap email cua ban</string>
     <string name="image">Hinh cua ban:</string>
     <string name="imageHint">Nhap vao hinh tren de chup hinh</string>
+    <string name="toChatButton">Go to chat</string>
 </resources>

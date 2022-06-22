@@ -13,5 +13,6 @@
     <string name="profileEmailHint">Enter your email</string>
     <string name="image">Your picture:</string>
     <string name="imageHint">Click the button above to take a picture</string>
+    <string name="toChatButton">Go to chat</string>
 
 </resources>
