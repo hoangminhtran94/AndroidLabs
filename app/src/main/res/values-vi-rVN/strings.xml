@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">lab03</string>
+    <string name="app_name">lab04</string>
     <string name="hello_message">lab03</string>
     <string name="ButtonText">Nhan vao day</string>
     <string name="email">Nhap email:</string>
@@ -14,5 +14,13 @@
     <string name="profileEmailHint">Nhap email cua ban</string>
     <string name="image">Hinh cua ban:</string>
     <string name="imageHint">Nhap vao hinh tren de chup hinh</string>
-    <string name="toChatButton">Go to chat</string>
+    <string name="toChatButton">Di toi chat</string>
+    <string name="sendButton">Gui</string>
+    <string name="messageHint">Nhap vao day!</string>
+    <string name="receiveButton">Nhan tin</string>
+    <string name="alertTitle">Ban muon xoa thong tin nay?</string>
+    <string name="alertMessage1">Id hang duoc chon la:</string>
+    <string name="alertMessage2">Id trong database la:</string>
+    <string name="yes">Co</string>
+    <string name="No">Khong</string>
 </resources>

@@ -89,14 +89,14 @@ public class ChatRoomActivity extends AppCompatActivity{
 
     public void onDelete (int index, MyListAdapter adapter){
         AlertDialog.Builder builder = new AlertDialog.Builder(ChatRoomActivity.this);
-        builder.setTitle("“Do you want to delete this?");
-        builder.setMessage("The Selected row is:"+ index +"\nTheDatabase id is:"+adapter.getItemId(index));
+        builder.setTitle(R.string.alertTitle);
+        builder.setMessage(getText(R.string.alertMessage1)+""+ index +"\n"+getText(R.string.alertMessage2)+""+adapter.getItemId(index));
 
 
 
         builder.setCancelable(false);
-        builder.setPositiveButton("Yes",(dialog, which) -> {removeItem(index);});
-        builder.setNegativeButton("No", (dialog, which) -> {dialog.cancel();});
+        builder.setPositiveButton(R.string.yes,(dialog, which) -> {removeItem(index);});
+        builder.setNegativeButton(R.string.No, (dialog, which) -> {dialog.cancel();});
         AlertDialog alertDialog = builder.create();
 
         // Show the Alert Dialog box

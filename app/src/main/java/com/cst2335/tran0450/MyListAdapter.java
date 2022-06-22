@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.cst2335.tran0450.Message;
-import com.cst2335.tran0450.R;
 
 import java.util.ArrayList;
 

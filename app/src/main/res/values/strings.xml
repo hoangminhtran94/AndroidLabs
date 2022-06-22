@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">lab03</string>
+    <string name="app_name">lab04</string>
     <string name="hello_message">lab03</string>
     <string name="ButtonText">I\’m a button</string>
     <string name="email">Enter your email:</string>
@@ -14,5 +14,12 @@
     <string name="image">Your picture:</string>
     <string name="imageHint">Click the button above to take a picture</string>
     <string name="toChatButton">Go to chat</string>
-
+    <string name="sendButton">Send</string>
+    <string name="messageHint">Type here!</string>
+    <string name="receiveButton">Receive</string>
+    <string name="alertTitle">Do you want to delete this?</string>
+    <string name="alertMessage1">The Selected row is:</string>
+    <string name="alertMessage2">TheDatabase id is:</string>
+    <string name="yes">Yes</string>
+    <string name="No">No</string>
 </resources>
