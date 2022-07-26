@@ -22,6 +22,7 @@ import android.widget.ImageButton;
 public class ProfileActivity extends AppCompatActivity {
     private ImageButton imgView;
     private Button toChat;
+    private Button toWeatherForeCast;
     private EditText profileEmail;
     public static final String TAG = "PROFILE_ACTIVITY";
 
@@ -33,6 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         profileEmail = (EditText) findViewById(R.id.profileEmail);
         toChat = (Button) findViewById(R.id.toChatButton);
+        toWeatherForeCast = (Button) findViewById(R.id.toWeatherForecast) ;
         Intent fromMain = getIntent();
         String emailFromMain = fromMain.getStringExtra("Email");
 
@@ -55,24 +57,24 @@ public class ProfileActivity extends AppCompatActivity {
                             }
                         });
 
-        imgView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                    myPictureTakerLauncher.launch(takePictureIntent);
-                }
-
+        imgView.setOnClickListener(v -> {
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                myPictureTakerLauncher.launch(takePictureIntent);
             }
+
         });
 
-        toChat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToChat = new Intent(ProfileActivity.this, ChatRoomActivity.class);
+        toChat.setOnClickListener(v -> {
+            Intent goToChat = new Intent(ProfileActivity.this, ChatRoomActivity.class);
 //                goToProfile.putExtra("Email", inputEmail);
-                startActivity(goToChat);
-            }
+            startActivity(goToChat);
+        });
+
+        toWeatherForeCast.setOnClickListener(v -> {
+            Intent goToWeatherForeCast = new Intent(ProfileActivity.this, WeatherForecast.class);
+//                goToProfile.putExtra("Email", inputEmail);
+            startActivity(goToWeatherForeCast);
         });
     }
 }

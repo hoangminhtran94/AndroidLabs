@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/weatherContainer"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <ImageView
+            android:id="@+id/currentWeather"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="93dp"
+            android:layout_marginTop="63dp"
+            android:layout_marginEnd="118dp"
+            android:layout_marginBottom="442dp"
+            android:padding="1dp"
+            android:src="@drawable/image_boder">
+
+        </ImageView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/selectContainer"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/weatherContainer"
+        android:layout_marginTop="5dp">
+
+        <ProgressBar
+            android:id="@+id/processBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="136dp"
+            android:layout_height="41dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="134dp">
+
+        </ProgressBar>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/selectContainer">
+
+        <TextView
+            android:id="@+id/currentTem"
+            android:layout_width="77dp"
+            android:layout_height="53dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="294dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/minTem"
+            android:layout_width="77dp"
+            android:layout_height="53dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="205dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/maxTem"
+            android:layout_width="77dp"
+            android:layout_height="53dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="118dp"
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/uvRating"
+            android:layout_width="77dp"
+            android:layout_height="53dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="34dp">
+
+        </TextView>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
