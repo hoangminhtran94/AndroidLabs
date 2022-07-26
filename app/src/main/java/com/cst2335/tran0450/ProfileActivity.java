@@ -25,6 +25,7 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText profileEmail;
     public static final String TAG = "PROFILE_ACTIVITY";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +62,7 @@ public class ProfileActivity extends AppCompatActivity {
                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                     myPictureTakerLauncher.launch(takePictureIntent);
                 }
+
             }
         });
 
