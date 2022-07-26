@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">lab04</string>
-    <string name="hello_message">lab03</string>
+    <string name="app_name">lab06</string>
+    <string name="hello_message">lab06</string>
     <string name="ButtonText">I\’m a button</string>
     <string name="email">Enter your email:</string>
     <string name="emailHint">Type email here</string>

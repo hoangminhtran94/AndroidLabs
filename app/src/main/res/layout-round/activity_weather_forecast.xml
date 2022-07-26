@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+>
+
+
+    <RelativeLayout
+        android:id="@+id/weatherContainer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/currentWeather"
+            android:layout_width="54dp"
+            android:layout_height="49dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="86dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="87dp"
+            android:layout_marginBottom="442dp"
+            android:padding="1dp"
+            android:src="@drawable/image_boder">
+
+        </ImageView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/selectContainer"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_below="@+id/weatherContainer"
+        android:layout_marginTop="13dp">
+
+        <ProgressBar
+            android:id="@+id/processBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="136dp"
+            android:layout_height="41dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-3dp"
+            android:layout_marginEnd="49dp">
+
+        </ProgressBar>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/selectContainer"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/currentTem"
+            android:layout_width="41dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="124dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/minTem"
+            android:layout_width="42dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="172dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/maxTem"
+            android:layout_width="38dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="77dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/uvRating"
+            android:layout_width="39dp"
+            android:layout_height="33dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="30dp">
+
+        </TextView>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
