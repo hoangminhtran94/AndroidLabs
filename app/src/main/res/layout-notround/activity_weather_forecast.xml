@@ -7,23 +7,22 @@
     <RelativeLayout
         android:id="@+id/weatherContainer"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="60dp">
 
         <ImageView
             android:id="@+id/currentWeather"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="93dp"
-            android:layout_marginTop="63dp"
-            android:layout_marginEnd="118dp"
-            android:layout_marginBottom="442dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="0dp"
             android:padding="1dp"
-            android:src="@drawable/image_boder">
-
-        </ImageView>
+            android:src="@drawable/image_boder" />
 
     </RelativeLayout>
 
@@ -31,19 +30,21 @@
     <RelativeLayout
         android:id="@+id/selectContainer"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_below="@+id/weatherContainer"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="1dp">
 
         <ProgressBar
             android:id="@+id/processBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="136dp"
-            android:layout_height="41dp"
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="134dp">
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="59dp">
 
         </ProgressBar>
 
@@ -56,40 +57,49 @@
 
         <TextView
             android:id="@+id/currentTem"
-            android:layout_width="77dp"
-            android:layout_height="53dp"
-            android:layout_alignParentStart="true"
+            android:layout_width="29dp"
+            android:layout_height="63dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="294dp">
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="141dp"
+            android:layout_marginBottom="0dp"
+            android:textSize="10sp">
 
         </TextView>
 
         <TextView
             android:id="@+id/minTem"
-            android:layout_width="77dp"
-            android:layout_height="53dp"
+            android:layout_width="32dp"
+            android:layout_height="63dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="205dp">
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="102dp"
+            android:layout_marginBottom="0dp"
+            android:textSize="10sp">
 
         </TextView>
 
         <TextView
             android:id="@+id/maxTem"
-            android:layout_width="77dp"
-            android:layout_height="53dp"
+            android:layout_width="35dp"
+            android:layout_height="64dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="118dp"
-            >
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="0dp"
+            android:textSize="10sp">
 
         </TextView>
 
         <TextView
             android:id="@+id/uvRating"
-            android:layout_width="77dp"
-            android:layout_height="53dp"
+            android:layout_width="31dp"
+            android:layout_height="64dp"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="34dp">
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="0dp"
+            android:textSize="10sp">
 
         </TextView>
 
