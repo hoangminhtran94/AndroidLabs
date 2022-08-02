@@ -9,7 +9,12 @@
     android:clickable="false"
     android:focusable="false"
     android:focusableInTouchMode="false"
-       >
+    android:layout_marginTop="27dp"
+    android:layout_marginBottom="27dp"
+    android:layout_marginLeft="48dp"
+    android:layout_marginRight="48dp"
+
+    >
 
     <ListView
         android:id="@+id/listView"

@@ -101,18 +101,11 @@ public class WeatherForecast extends AppCompatActivity {
                         {
                             iconName = xpp.getAttributeValue(null, "icon")+".png"; // this will run for <AMessage message="parameter" >
                             File file = getBaseContext().getFileStreamPath(iconName);
-                            if (!file.exists()) {
-                                saveImage(iconName);
-                            }else {
-                                Log.i("WeatherForecast", "Saved icon, " + iconName + " is displayed.");
-                                try {
-                                    FileInputStream in = new FileInputStream(file);
-                                    weatherImage = BitmapFactory.decodeStream(in);
-                                } catch (FileNotFoundException e) {
-                                    Log.i("WeatherForecast", "Saved icon, " + iconName + " is not found.");
-                                }
-                            }
+                            saveImage(iconName);
+                            FileInputStream in = new FileInputStream(file);
+                            weatherImage = BitmapFactory.decodeStream(in);
                             publishProgress(100);
+
                         }
                     }
                     eventType = xpp.next(); //move to the next xml event and store it in a variable
