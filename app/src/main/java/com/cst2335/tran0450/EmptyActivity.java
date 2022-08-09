@@ -17,18 +17,9 @@ public class EmptyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empty);
         Bundle fromChatRoom = this.getIntent().getExtras();
-        if(fromChatRoom!= null) {
-            String messageFromChatBox = fromChatRoom.getString("MESSAGE");
-            Long IDFromChatBox = fromChatRoom.getLong("ID");
-            int typeFromChatBox = fromChatRoom.getInt("TYPE");
-            boolean checked = false;
-            if (typeFromChatBox == 0) {
-                checked = true;
-            }
 
-
-
-            DetailsFragment dFragment = new DetailsFragment(); //add a DetailFragment
+        DetailsFragment dFragment = new DetailsFragment();
+        dFragment.setArguments( fromChatRoom ); //add a DetailFragment
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.frameLayout, dFragment) //Add the fragment in FrameLayout
@@ -37,4 +28,3 @@ public class EmptyActivity extends AppCompatActivity {
 
         }
     }
-}
