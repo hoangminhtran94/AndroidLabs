@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import android.widget.Toast;
@@ -26,8 +28,10 @@ public class ChatRoomActivity extends AppCompatActivity{
     private EditText inputText;
     static Context context;
     private MyListAdapter adapter;
+    FrameLayout frameLayout;
     int positionClicked = 0;
     static Toast t;
+
     private SQLiteDatabase db;
 
     @Override
@@ -38,17 +42,43 @@ public class ChatRoomActivity extends AppCompatActivity{
 
         context =getApplicationContext();
         listView = (ListView) findViewById(R.id.listView);
+         boolean isTablet = findViewById(R.id.frameLayout) != null;
+
         inputText = (EditText) findViewById(R.id.inputText) ;
         messages = new ArrayList<Message>();
-//        messages.add(new Message("aa",1,positionClicked));
-//        messages.add(new Message("CCC",0,positionClicked++));
+
         listView.setLongClickable(true);
+        listView.setClickable(true);
 
         loadDataFromDatabase();
 
 
         adapter = new MyListAdapter(ChatRoomActivity.this, messages);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            Bundle dataToPass = new Bundle();
+            dataToPass.putString("MESSAGE", messages.get(i).getMessage() );
+            dataToPass.putInt("POSITION", i);
+            dataToPass.putLong("ID",l);
+            dataToPass.putInt("TYPE", messages.get(i).getType());
+
+            if(isTablet)
+            {
+                DetailsFragment dFragment = new DetailsFragment(); //add a DetailFragment
+                dFragment.setArguments( dataToPass ); //pass it a bundle for information
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frameLayout, dFragment) //Add the fragment in FrameLayout
+                        .commit(); //actually load the fragment. Calls onCreate() in DetailFragment
+            }
+            else //isPhone
+            {
+                Intent nextActivity = new Intent(this, EmptyActivity.class);
+                nextActivity.putExtras(dataToPass); //send data to next activity
+                startActivity(nextActivity); //make the transition
+            }
+        });
 
         listView.setOnItemLongClickListener((parent, view, position, id) -> {
             onDelete(position,adapter);

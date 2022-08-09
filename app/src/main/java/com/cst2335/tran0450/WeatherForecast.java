@@ -190,7 +190,9 @@ public class WeatherForecast extends AppCompatActivity {
                 URL uvUrl = new URL(args[0]);
                 HttpURLConnection uvConnection = (HttpURLConnection) uvUrl.openConnection();
                 InputStream uvResponse = uvConnection.getInputStream();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(uvResponse, "UTF-8"), 8);
+                BufferedReader reader = new BufferedReader(new InputStreamReader(uvResponse, "UTF-8"),8);
+
+
                 StringBuilder sb = new StringBuilder();
                 String line = "";
                 while ((line = reader.readLine()) != null)
